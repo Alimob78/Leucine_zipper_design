@@ -21,8 +21,8 @@ source ~/.bashrc
 conda activate dl_binder_design_py38
 
 # NOTE: I would suggest to set the array # to 1-[number of structures] but since since sherlock has a limit of 1000 arrays jobs, we will use the following foramt
-af2_initial_guess/A_predict.py -pdbdir ./outputs_mpnn_fr/combined_mpnn_fr/ -outpdbdir ./output_af2_predictions -scorefilename af2_prediction_pae_results_${SLURM_ARRAY_TASK_ID}.sc -runlist ${SLURM_ARRAY_TASK_ID}
-af2_initial_guess/A_predict.py -pdbdir ./outputs_mpnn_fr/combined_mpnn_fr/ -outpdbdir ./output_af2_predictions -scorefilename af2_prediction_pae_results_$(( ${SLURM_ARRAY_TASK_ID} + 1000 )).sc -runlist $(( ${SLURM_ARRAY_TASK_ID} + 1000 ))
+af2_initial_guess/A_predict.py -pdbdir ./outputs_mpnn_fr/combined_mpnn_fr/ -outpdbdir ./output_af2_predictions -scorefilename pae_interaction_results/af2_prediction_pae_results_${SLURM_ARRAY_TASK_ID}.sc -runlist ${SLURM_ARRAY_TASK_ID}
+af2_initial_guess/A_predict.py -pdbdir ./outputs_mpnn_fr/combined_mpnn_fr/ -outpdbdir ./output_af2_predictions -scorefilename pae_interaction_results/af2_prediction_pae_results_$(( ${SLURM_ARRAY_TASK_ID} + 1000 )).sc -runlist $(( ${SLURM_ARRAY_TASK_ID} + 1000 ))
 
 if [ ${SLURM_ARRAY_TASK_ID} -eq 984 ]; then
     python score_merger.py
