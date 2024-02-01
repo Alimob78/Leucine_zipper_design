@@ -22,7 +22,7 @@ II. Running the code:
   2. You now need to combine these files with an updated prefix by running the Python code `folder_combiner.py` (This step could be further automated with the previous step).
 
 * Scoring designs with AF2:
-1. Make sure that you have the right environment for running AlpahFold2. Run `af2_initial_guess_submission.sh` which will score all 2000 designs in `pae_interaction_results` file. It also executes `top_design.py` at the end which selects for top designs with pae_interaction scores of less than 10.
-2. You can finally access the top design pdb files as well as their corresponding score file in `top_designs`.
+  1. Make sure that you have the right environment for running AlpahFold2. Run `af2_initial_guess_submission.sh` which will score all 2000 designs in `pae_interaction_results` file. It also executes `top_design.py` at the end which selects for top designs with pae_interaction scores of less than 10.
+  2. You can finally access the top design pdb files as well as their corresponding score file in `top_designs`.
 
 
